@@ -9,7 +9,7 @@ def search(root: Tree, x: str, y: str):
 
 def lca(root: Tree, x: str, y: str) -> Tree:
     if root.nodes == []: return None
-    if root.value == x or root.value == y: return root.value
+    if root.value == x or root.value == y: return root
     results = [node for node in root.nodes if search(node, x, y)]
     if len(results) == 2: return root
     elif len(results) == 1: return lca(results[0], x, y)
